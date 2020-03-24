@@ -1,0 +1,4 @@
+markovify==0.7.1
+pronouncing==0.1.5
+tweepy==3.8.0
+

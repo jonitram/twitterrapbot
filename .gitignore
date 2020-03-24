@@ -1,0 +1,18 @@
+# swap files
+*.swo
+*.swp
+
+# vscode
+.vscode
+
+# macOS folder attributes
+*.DS_Store
+
+# intellij
+*.idea
+
+# virtual environment
+*venv/*
+
+# pycache
+*pycache*
