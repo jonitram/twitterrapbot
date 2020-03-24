@@ -219,6 +219,8 @@ def process_mentions(client):
     else:
         done = True
     while not done:
+        if tweet.favorited:
+            return result
         if tweet not in result:
             result.append(tweet)
         if mentions.index(tweet) == (len(mentions) - 1):
