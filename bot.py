@@ -247,6 +247,8 @@ def extract_words(tweet):
         result.append(words[2])
     elif len(words) == 2:
         result.append(words[1])
+    for i in range(len(result)):
+        result[i] = result[i].lower()
     return result
 
 def polling(event, context):
