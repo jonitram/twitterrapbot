@@ -267,6 +267,7 @@ def main():
     client = config.login()
     tweets = process_mentions(client)
     for i in range(len(tweets)):
+        client.create_favorite(tweets[i].id)
         new_tweet = "https://twitter.com/"
         new_tweet += tweets[i].user.screen_name
         new_tweet += "/status/"
@@ -286,7 +287,6 @@ def main():
                 new_tweet += bar
                 new_tweet += "\n"
         client.update_status(status=new_tweet)
-        client.create_favorite(tweets[i].id)
     return
 
 if __name__ == "__main__":
