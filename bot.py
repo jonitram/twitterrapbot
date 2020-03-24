@@ -255,7 +255,7 @@ def polling(event, context):
 def tweet_random_verse(event, context):
     client = config.login()
     new_tweet = ""
-    new_tweet_list = gen_rap.get_lyrics()
+    new_tweet_list = get_lyrics()
     for bar in new_tweet_list:
         new_tweet += bar
         new_tweet += "\n"
@@ -273,10 +273,10 @@ def main():
         words = extract_words(tweets[i])
         new_tweet += "\n"
         try:
-            new_tweet_list = gen_rap.get_lyrics(words)
+            new_tweet_list = get_lyrics(words)
         except (RuntimeError, KeyError, IndexError):
             new_tweet += "One of your requested words cannot be used. Here's a random verse instead:\n"
-            new_tweet_list = gen_rap.get_lyrics()
+            new_tweet_list = get_lyrics()
             for bar in new_tweet_list:
                 new_tweet += bar
                 new_tweet += "\n"
