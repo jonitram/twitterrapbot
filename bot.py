@@ -222,7 +222,7 @@ def process_mentions(client):
         if tweet.favorited:
             return result
         if tweet not in result:
-            result.append(tweet)
+            result.insert(0,tweet)
         if mentions.index(tweet) == (len(mentions) - 1):
             mentions = client.mentions_timeline(max_id=tweet.id)
             # remove duplicate
