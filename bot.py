@@ -262,7 +262,8 @@ def tweet_random_verse(event, context):
     for bar in new_tweet_list:
         new_tweet += bar
         new_tweet += "\n"
-    client.update_status(status=new_tweet)
+    tweet = client.update_status(status=new_tweet)
+    client.create_favorite(tweet.id)
     return
 
 def main():
@@ -288,7 +289,8 @@ def main():
             for bar in new_tweet_list:
                 new_tweet += bar
                 new_tweet += "\n"
-        client.update_status(status=new_tweet)
+        tweet = client.update_status(status=new_tweet)
+        client.create_favorite(tweet.id)
     return
 
 if __name__ == "__main__":
