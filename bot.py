@@ -158,7 +158,7 @@ def get_lyrics(end_words=None):
     index = RapIndex()
     index_name = input_file[0:(len(input_file)-4)]+".ind"
 
-    if not os.path.exists(index_name):
+    if not config.os.path.exists(index_name):
         with open(input_file, "r") as f:
             for line in f:
                 line = line.replace("\s+", " ")
