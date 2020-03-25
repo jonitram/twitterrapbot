@@ -236,16 +236,18 @@ def process_mentions(client):
             tweet = mentions[mentions.index(tweet) + 1]
     return result
 
-def extract_words(tweet):
-    words = tweet.text.split()
+def extract_words(client, tweet):
+    mention = "@"
+    mention += client.me().screen_name
+    words = tweet.text.replace(mention,'',1).split()
     result = []
     for i in range(len(words)):
         words[i].translate(str.maketrans('', '', string.punctuation))
-    if len(words) >= 3:
+    if len(words) >= 2:
+        result.append(words[0])
         result.append(words[1])
-        result.append(words[2])
-    elif len(words) == 2:
-        result.append(words[1])
+    elif len(words) == 1:
+        result.append(words[0])
     for i in range(len(result)):
         result[i] = result[i].lower()
     return result
