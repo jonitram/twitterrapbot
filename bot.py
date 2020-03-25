@@ -1,7 +1,6 @@
 import string
 import config
 import pronouncing as p
-import markovify
 import pickle
 import random
 
@@ -294,4 +293,5 @@ def main():
     return
 
 if __name__ == "__main__":
-    main()
+    words = ['shrek','god']
+    print_lyrics(get_lyrics(words))
