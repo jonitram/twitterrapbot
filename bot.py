@@ -276,7 +276,7 @@ def main():
         new_tweet += tweets[i].user.screen_name
         new_tweet += "/status/"
         new_tweet += str(tweets[i].id)
-        words = extract_words(tweets[i])
+        words = extract_words(client, tweets[i])
         new_tweet += "\n"
         try:
             new_tweet_list = get_lyrics(words)
