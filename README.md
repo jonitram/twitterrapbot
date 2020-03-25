@@ -1,4 +1,5 @@
 # Twitter Rap Bot
+## https://twitter.com/scuffedrapbot
 ### Twitter bot that generates rap verses using a set of up to 2 optional user requested words and tweets them. 
 ---
 - The bot is designed to run on an AWS lambda function, polling every other minute on the odd minute. 
